@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/project-by-practice--lesson-4/static/css/main.090d433c.css",
+    "main.js": "/project-by-practice--lesson-4/static/js/main.1d1313e9.js",
+    "index.html": "/project-by-practice--lesson-4/index.html",
+    "main.090d433c.css.map": "/project-by-practice--lesson-4/static/css/main.090d433c.css.map",
+    "main.1d1313e9.js.map": "/project-by-practice--lesson-4/static/js/main.1d1313e9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.090d433c.css",
+    "static/js/main.1d1313e9.js"
+  ]
+}
