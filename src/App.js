@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import UserForm from "./components/user-form/UserForm";
+import ErrorModule from "./components/error-module/ErrorModule";
+import UserList from "./components/user-list/UserList";
 
 function App() {
+  const [userList, setUserList] = useState([
+    { name: "Janbolot", age: 18, id: "f1" },
+  ]);
+
+  const onAddUserHandler = (newUser) => {
+    setUserList((prevState) => [...prevState, newUser]);
+  };
+
+  const deleteUserHandler = (id) => {
+    // console.log(id);
+    return () => {
+      const update = userList.filter((item) => item.id !== id);
+      setUserList(update);
+      console.log(update);
+    };
+  };
+
+  const error = {
+    title: "empty",
+    message: "Enter message",
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <UserForm onAddUserHandler={onAddUserHandler} />
+      <UserList userList={userList} deleteUserHandler={deleteUserHandler} />
+      {/* <ErrorModule {...error}/> */}
     </div>
   );
 }
